@@ -2,6 +2,11 @@
 // simd.js works on Firefox nightly only.
 // It's time to write Matrix/Vector stuffs with SIMD.js
 
+// gl-matrix began to support simd.js:
+//    https://github.com/toji/gl-matrix
+
+// Also see: 
+//    http://jsperf.com/simdmat4
 
 var v1 = [1.0, 0.0, 0.0];
 var v2 = [0.0, 1.0, 0.0];
@@ -22,7 +27,7 @@ function vec_add_simd(v1, v2) {
     return (
         SIMD.Float32x4.extractLane(sum, 0) +
         SIMD.Float32x4.extractLane(sum, 1) +
-        SIMD.Float32x4.extractLane(sum, 2) ) / a.length;
+        SIMD.Float32x4.extractLane(sum, 2) ) / 3;
 }
 
 var t0 = Date.now();
@@ -41,4 +46,4 @@ var t2 = Date.now();
 
 var diff = t2 - t1 - t1 + t0;
 
-console.log("benchmark: " + diff);
+console.log("benchmark: " + (diff / (t2-t0)) + "%");
