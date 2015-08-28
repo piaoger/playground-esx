@@ -7,6 +7,8 @@
 
 // Also see: 
 //    http://jsperf.com/simdmat4
+//    https://github.com/PeterJensen/ecmascript_simd
+//    https://github.com/toji/gl-matrix/pull/172
 
 var v1 = [1.0, 0.0, 0.0];
 var v2 = [0.0, 1.0, 0.0];
