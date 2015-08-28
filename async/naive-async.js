@@ -1,13 +1,16 @@
-// naive-async.js
+// It's a naive implementation of async workflow.
 
 
 var Async = {
 
+    // Enable/disable logging
     debug: false,
 
+    // Simple wrapper of console.log.
     log: function(msg) {
-        if(Async.debug)
-        console.log('async: ' + msg);
+        if(Async.debug) {
+             console.log('async: ' + msg);
+        }
     },
 
     // An utility to run funcations sequentially.
@@ -37,27 +40,27 @@ var Async = {
         var remainElems = elems.length;
 
         var ayncfn = function(callback) {
-            var runCount = eachCount;
-
+            var countInRound = elems.length >= eachCount ? eachCount : elems.length;
+            var remainCountInRound = countInRound;
             var elemDone = function() {
+                remainCountInRound --;
+                remainElems --;
+
                 if(remainElems <= 0) {
                     finished();
                     return;
                 }
 
-                if(runCount <= 0) {
+                if(remainCountInRound <= 0) {
                     Async.log('---> Next round ');
                     callback(ayncfn);
                 }
             }
 
-            var countInRound = elems.length >= eachCount ? eachCount : elems.length;
             for(var i = 0; i < countInRound; i++) {
                 setTimeout( function() {
                     var elem = elems.shift();
                     fn(elem, function() {
-                        runCount --;
-                        remainElems --;
                         elemDone();
                     }); 
                 }, 0);
@@ -70,12 +73,14 @@ var Async = {
     }
 };
 
+
+// Enable Debugging
 Async.debug = true;
 
 function test_async_series() {
     var elements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var fn = function(elem, callback) {
-        Async.log('processing item '  + elem);
+        Async.log('processing item ' + elem);
         if(callback) callback();
     }
 
@@ -86,16 +91,24 @@ function test_async_series() {
 }
 
 function test_async_parallel() {
-    var elements = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,16,17];
+    var elements = [
+        1,   2,  3,  4, 
+        5,   6,  7,  8,
+        9,  10, 11, 12,
+        13, 14, 15, 16,
+        17, 18, 19, 20
+    ];
     var eachCount = 4;
-    var maxCount = 14;
-    var passes = [1,  2,  3, 4, 5, 6, 7, 8,9,10];
+    var maxCount = 19;
+
     var fn = function(elem, callback) {
-           var idx = Math.floor((Math.random() * 10));
-            setTimeout(function() {
+        var passes = [1,  2,  3, 4, 5, 6, 7, 8, 9, 10];
+        var idx = Math.floor((Math.random() * 10));
+        var calcTime = passes[idx] * 100;
+        setTimeout(function() {
             Async.log('processing item '  + elem  + '/' + passes[idx]* 100);
             if(callback) callback();
-        }, passes[idx] * 100);
+        }, calcTime);
     };
 
     Async.parallel(elements, 4, maxCount, fn, function(){
