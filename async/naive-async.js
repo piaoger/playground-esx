@@ -77,6 +77,8 @@ var Async = {
 // Enable Debugging
 Async.debug = true;
 
+
+
 function test_async_series() {
     var elements = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var fn = function(elem, callback) {
@@ -104,6 +106,8 @@ function test_async_parallel() {
     var fn = function(elem, callback) {
         var passes = [1,  2,  3, 4, 5, 6, 7, 8, 9, 10];
         var idx = Math.floor((Math.random() * 10));
+        
+        // Async heavy computation.
         var calcTime = passes[idx] * 100;
         setTimeout(function() {
             Async.log('processing item '  + elem  + '/' + passes[idx]* 100);
