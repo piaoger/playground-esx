@@ -4,11 +4,7 @@ Learn how to set up an ES6 environment with Webpack, Gulp and Babel to build nex
 
 ## How to start
 
-    npm install -g webpack
     npm install -g gulp
-
-    # generate bundle.js with webpack & babel
-    webpack ./www/app.js ./www/bundle.js --module-bind 'js=babel'
 
     # start webserv
     gulp
