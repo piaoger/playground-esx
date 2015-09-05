@@ -1,7 +1,7 @@
 {
   "name": "es6-webpack-gulp",
   "version": "1.0.0",
-  "description": "A es6, webpack, gulp and babel environment to build next generation JavaScript applications.",
+  "description": "A es6, webpack, gulp, babel and flow environment to build next generation JavaScript applications.",
   "main": "www/app.js",
   "author": "Piaoger Gong <piaoger@gmail.com>",
   "license": "MIT",

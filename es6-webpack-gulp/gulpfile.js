@@ -209,7 +209,7 @@ gulp.task('flow', function() {
     checkstatus();
 });
 
-gulp.task('lib', function() {
+gulp.task('babel', function() {
   return gulp
     .src(paths.src)
     .pipe(babel(babelOpts))
@@ -257,5 +257,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function(done) {
-    sync('flow', 'lib', 'transpile', 'transpile:min', 'webserv', 'watch', done);
+    sync('flow', 'babel', 'transpile', 'transpile:min', 'webserv', 'watch', done);
 });
