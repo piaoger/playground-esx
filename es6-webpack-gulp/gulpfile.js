@@ -109,7 +109,7 @@ function buildWebpackConfig(opts) {
             )
         );
     }
-  
+
     return webpackStream(webpackConfig, null, function(err, stats) {
         if (err) {
             throw new gulpUtil.PluginError('webpack', err);
@@ -135,10 +135,20 @@ process.env.PATH += ':./node_modules/.bin';
     });
 
     flowServer.stdout.on('data', function(data){
-        console.log(data);
+        console.log('flow server: ' + data);
+    });
+
+    flowServer.on('error', function (e) {
+        console.log('flow server: ' + e);
+        process.exit(1);
+    });
+
+    flowServer.on('exit', function() {
+        console.log('flow server: closing');
     });
 
     process.on('SIGINT', function() {
+        console.log('flow server: closing flow server');
         flowServer.kill();
         process.exit();
     });
@@ -157,6 +167,7 @@ function checkstatus() {
         });
 
     child.on('exit', function(code) {
+        console.log('flow status: exit');
     });
 
     child.stdout.on('data', function(data){
@@ -172,7 +183,7 @@ function checkstatus() {
 
              // TODO: customize error message to make it more readable.
              console.log(errdata);
- 
+
         } else {
             // remove dirname from long path names.
             var regex = new RegExp(path.resolve(__dirname), "g");
