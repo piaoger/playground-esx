@@ -1,6 +1,8 @@
 # es6-flow-webpack-gulp
 
-Learn how to set up an ES6 environment with Webpack, Gulp, Babel and flow to build next generation JavaScript applications. 
+Learn how to set up an ES6 environment with Webpack, Gulp, Babel and flow to build next generation JavaScript applications.
+
+It will also used as a template for future projects.
 
 ## How to start
 
@@ -14,6 +16,8 @@ Learn how to set up an ES6 environment with Webpack, Gulp, Babel and flow to bui
 - jslint support
 
 ## References
+
+[MDN es6 in depth](https://hacks.mozilla.org/category/es6-in-depth/)
 
 [ES6 Build tools](https://github.com/angular-class/ES6-build-tools)
 

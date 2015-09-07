@@ -1,5 +1,6 @@
 // It's a naive implementation of async workflow.
 
+'use strict';
 
 var Async = {
 
@@ -26,7 +27,7 @@ var Async = {
             var elem = elems.shift();
             fn(elem, function() {
                 callback(ayncfn);
-            });        
+            });
         };
 
         return function() {
@@ -62,7 +63,7 @@ var Async = {
                     var elem = elems.shift();
                     fn(elem, function() {
                         elemDone();
-                    }); 
+                    });
                 }, 0);
             }
         };
@@ -94,7 +95,7 @@ function test_async_series() {
 
 function test_async_parallel() {
     var elements = [
-        1,   2,  3,  4, 
+        1,   2,  3,  4,
         5,   6,  7,  8,
         9,  10, 11, 12,
         13, 14, 15, 16,
@@ -106,7 +107,7 @@ function test_async_parallel() {
     var fn = function(elem, callback) {
         var passes = [1,  2,  3, 4, 5, 6, 7, 8, 9, 10];
         var idx = Math.floor((Math.random() * 10));
-        
+
         // Async heavy computation.
         var calcTime = passes[idx] * 100;
         setTimeout(function() {

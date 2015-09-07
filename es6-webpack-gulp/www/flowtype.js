@@ -1,4 +1,6 @@
 
+'use strict';
+
 // From: http://www.crmarsh.com/flow/
 
 /* @flow */
