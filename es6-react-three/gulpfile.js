@@ -264,7 +264,8 @@ gulp.task('webserv', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(paths.watch, ['flow', serv.reload]);
+    //checkstatus();
+    gulp.watch(paths.watch, [serv.reload]);
 });
 
 gulp.task('default', function(done) {

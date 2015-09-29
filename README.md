@@ -1,6 +1,6 @@
 # playground-esx
 
-playground for es6, typescript and other javascript 
+playground for es6, typescript and other javascript
 
 
 ## What are in the playground?
@@ -17,3 +17,6 @@ playground for es6, typescript and other javascript
 
   learn to build next generation application with babel, flow, webpack and gulp.
 
+## References
+
+[JavaScript Style Guide - ES6 ](https://github.com/airbnb/javascript)

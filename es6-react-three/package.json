@@ -1,0 +1,29 @@
+{
+    "name": "es6-react-three",
+    "version": "1.0.0",
+    "description": "A es6 and reactjs environment to build next generation graphics applications.",
+    "main": "www/main.js",
+    "author": "Piaoger Gong <piaoger@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "babel-core": "*",
+        "babel-loader": "*",
+        "browser-sync": "*",
+        "gulp": "*",
+        "gulp-util": "*",
+        "gulp-flatten": "*",
+        "gulp-babel": "*",
+        "run-sequence": "*",
+        "webpack-stream": "*",
+        "flow-bin": "*",
+        "react": "*",
+        "three": "^0.70.0",
+        "react-three": "git://github.com/Izzimach/react-three.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+
+}

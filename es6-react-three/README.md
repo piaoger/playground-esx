@@ -9,6 +9,8 @@ Learn how to write a 3D web application with react and three.js.
 
 [react](https://github.com/facebook/react)
 
+[thinking in react](http://facebook.github.io/react/docs/thinking-in-react.html)
+
 [React Chrome Dev Tools](http://facebook.github.io/react/blog/2014/01/02/react-chrome-developer-tools.html)
 
 [react devtools](https://github.com/facebook/react-devtools)
@@ -19,4 +21,12 @@ Learn how to write a 3D web application with react and three.js.
 
 [react three.js demo](https://github.com/poshaughnessy/react-three-demo)
 
-[foom.js](https://github.com/fzzzy/foom.js)
+[Ruanyifeng react demos](https://github.com/ruanyf/react-demos)
+
+[awsome react](https://github.com/enaqx/awesome-react)
+
+[react-gulp-boilerplate](https://github.com/michael-martin/react-gulp-boilerplate)
+
+
+
+ 
