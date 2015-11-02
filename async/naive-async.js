@@ -43,6 +43,9 @@ var Async = {
         var ayncfn = function(callback) {
             var countInRound = elems.length >= eachCount ? eachCount : elems.length;
             var remainCountInRound = countInRound;
+            if(remainCountInRound == 0) {
+                finished();
+            }
             var elemDone = function() {
                 remainCountInRound --;
                 remainElems --;
