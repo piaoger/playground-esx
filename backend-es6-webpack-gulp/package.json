@@ -9,18 +9,22 @@
     "request": "*"
   },
   "devDependencies": {
+
     "babel-core": "*",
     "babel-loader": "*",
     "json-loader":"*",
     "file-loader":"*",
-"babel-plugin-transform-object-assign": "^6.1.18",
+
+    "babel-plugin-transform-object-assign": "^6.1.18",
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
+
     "gulp": "*",
     "gulp-util": "*",
     "gulp-flatten": "*",
     "gulp-babel": "*",
     "run-sequence": "*",
+
     "webpack-stream": "*"
   },
   "scripts": {
