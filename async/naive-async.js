@@ -126,3 +126,17 @@ function test_async_parallel() {
 
 test_async_series();
 test_async_parallel();
+
+// future references: then.js, async.js
+//   async.js: https://github.com/caolan/async
+//   then.js:  https://github.com/zensh/then.js
+// todo:
+//  1. add maxcalldepth to avoid callstack oversize, not just call setTimeout
+//  2. add use nextTick, setTimeout in different environment
+//  3. add repeat, utill or retry which are useful at work.
+//  4. use es6 style, rullup.js as did in aync.js
+//  5. add logging options as did in then.js
+//  6. fail, final, ...
+//  7. support promise object
+//  8. Renaming: flow, flowaync or asyncflow ?
+
