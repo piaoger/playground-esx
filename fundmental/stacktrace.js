@@ -5,8 +5,6 @@
 //   https://github.com/stacktracejs/stacktrace.js
 
 
-
-
 // -------------------------------------------------------
 // test
 
@@ -80,7 +78,7 @@ function stacktrace(err) {
     // Error.stackTraceLimit is defined in v8 but not firefox.
     if(err.stack) {
 
-        // chome, v8
+        // chrome, v8
         stack = err.stack
             .replace(/^[^\(]+?[\n$]/gm, '')
             .replace(/^\s+at\s+/gm, '')
@@ -88,10 +86,7 @@ function stacktrace(err) {
             .split('\n');
 
         // firefox
-        // stack = err.stack
-        //     .replace(/(?:\n@:0)?\s+$/m, '').replace(/^\(/gm, '{anonymous}(').split('\n')
-    } else {
-
+        // stack = err.stack.replace(/(?:\n@:0)?\s+$/m, '').replace(/^\(/gm, '{anonymous}(').split('\n')
     }
 
     return {
