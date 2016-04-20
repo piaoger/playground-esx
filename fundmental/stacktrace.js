@@ -67,8 +67,8 @@ if(Error.stackTraceLimit) {
 
 function stacktrace(err) {
     var stack = [],
-        message = 'error';
-    if(err.message) {
+        message = '';
+    if(err && err.message) {
         message = err.message;
     } else {
         message = err;
@@ -76,7 +76,7 @@ function stacktrace(err) {
 
     // default tracelimit in node/chrome is 10?
     // Error.stackTraceLimit is defined in v8 but not firefox.
-    if(err.stack) {
+    if(err && err.stack) {
 
         // chrome, v8
         stack = err.stack
