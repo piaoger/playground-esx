@@ -68,10 +68,11 @@ if(Error.stackTraceLimit) {
 function stacktrace(err) {
     var stack = [],
         message = '';
-    if(err && err.message) {
-        message = err.message;
-    } else {
-        message = err;
+
+    if(err) {
+        if (err.message) {
+            message = err.message;
+        }
     }
 
     // default tracelimit in node/chrome is 10?
