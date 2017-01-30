@@ -1,0 +1,37 @@
+{
+  "name": "backend-es6-webpack-gulp-yarn",
+  "description":"backend-es6-webpack-gulp-yarn",
+  "version": "0.0.1",
+  "main": "./lib/index.js",
+  "repository": {},
+  "author": "piaoger gong <piaoger@gmail.com> (http://twitter.com/piaoger)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-inline-imports-commonjs": "^1.2.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015-node4": "^2.1.1",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-node5": "^12.0.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-newer": "^1.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "json-loader": "^0.5.4",
+    "run-sequence": "^1.2.2",
+    "webpack": "^1.14.0",
+    "yargs": "^6.6.0"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "build-webpack":"node ./scripts/build-webpack.js"
+  }
+}
