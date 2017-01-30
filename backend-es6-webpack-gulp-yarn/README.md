@@ -1,5 +1,16 @@
 
-# add new node module
+# readme
+
+## install yarn
+
+```
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
+https://yarnpkg.com/en/docs/install#alternatives-tab
+
+
+## add new node module
 
 ```
 yarn config set init-author-name "piaoger gong"
@@ -19,10 +30,10 @@ yarn init --yes
 # https://github.com/babel/babel-preset-latest
 # https://github.com/babel/babel-preset-env
 yarn add babel-core babel-loader --dev
+yarn add json-loader --dev
+
 yarn add babel-preset-env babel-preset-latest --dev
 yarn add babel-preset-stage-0 babel-preset-node5 babel-preset-es2015-node4 --dev
-
-yarn add json-loader --dev
 
 yarn add babel-plugin-transform-inline-imports-commonjs babel-plugin-transform-runtime --dev
 ```
@@ -40,15 +51,17 @@ yarn add gulp-if gulp-newer gulp-plumber gulp-sourcemaps gulp-util gulp-watch --
 yarn add webpack --dev
 ```
 
-#
+### source files
+
+```
 touch README.md
 
 mkdir src
 mkdir lib
 
 echo "export default function hello() { console.log('hello');}" > ./src/index.js
+```
 
+## TODO
 
-
-
-
+try to use rollup in future versions.

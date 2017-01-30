@@ -4,6 +4,7 @@
 //  https://github.com/lodash/lodash-webpack-plugin
 //  https://github.com/yarnpkg/yarn
 //  https://github.com/piaoger/playground-esx
+//  https://github.com/caolan/async
 
 'use strict';
 
